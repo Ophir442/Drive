@@ -1,0 +1,19 @@
+FROM node:latest
+
+# Create app directory inside the container
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json first (for caching)
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install express dotenv body-parser cors
+
+# Copy the rest of the web server code
+COPY . .
+
+# Expose the port the app runs on (usually 3000 or 8080)
+EXPOSE 3000
+
+# Start the application
+CMD ["node", "app.js"]

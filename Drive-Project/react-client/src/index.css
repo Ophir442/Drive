@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Form control styling */
+.form-control::placeholder {
+  color: #9aa0a6;
+  opacity: 1;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #1a73e8 !important;
+}
+
+/* Ensure autofill doesn't override dark mode styling */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: inherit;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Dark mode form controls */
+.dark-input {
+  color: white !important;
+  background-color: transparent !important;
+}
+
+.dark-input::placeholder {
+  color: #9aa0a6 !important;
+}
+
+.dark-input:-webkit-autofill,
+.dark-input:-webkit-autofill:hover,
+.dark-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px #202124 inset !important;
+}

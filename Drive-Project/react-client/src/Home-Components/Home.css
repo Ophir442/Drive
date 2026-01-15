@@ -1,0 +1,57 @@
+.flex { display: flex; }
+.col { flex-direction: column; }
+.center { align-items: center; }
+.between { justify-content: space-between; }
+.grow { flex: 1; }
+.wrap { flex-wrap: wrap; }
+.gap { gap: 8px; }
+.gap-sm { gap: 4px; }
+.gap-lg { gap: 16px; }
+
+.pointer { cursor: pointer; }
+.scroll { overflow: auto; }
+.hidden { overflow: hidden; }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.card-hover { transition: box-shadow 0.2s; box-shadow: 0 1px 3px gray; }
+.card-hover:hover { box-shadow: 0 4px 8px gray; }
+
+.row-hover:hover { background-color: whitesmoke; }
+.table-dark .row-hover:hover { background-color: #3d3d3d; }
+
+.sidebar-item { border-radius: 0 25px 25px 0; }
+.sidebar-item:hover { background-color: whitesmoke; }
+.sidebar-item.active { background-color: lightblue; color: dodgerblue; }
+.bg-dark .sidebar-item:hover { background-color: #3d3d3d; }
+.bg-dark .sidebar-item.active { background-color: #2a4a6a; }
+
+.btn-new:hover { box-shadow: 0 2px 6px gray; }
+
+.menu-item { cursor: pointer; padding: 8px 16px; display: flex; align-items: center; gap: 12px; }
+.menu-item:hover { background-color: whitesmoke; }
+.bg-dark .menu-item:hover { background-color: #3d3d3d; }
+
+.crumb { cursor: pointer; }
+.crumb:hover { color: dodgerblue; }
+
+.tree-item { user-select: none; }
+.tree-arrow { width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 4px; }
+.tree-arrow.open { transform: rotate(90deg); }
+
+.search-box { border-radius: 28px; height: 48px; display: flex; align-items: center; }
+
+.folder-list { max-height: 300px; overflow-y: auto; }
+
+.view-btn { border: none; padding: 6px 10px; display: flex; align-items: center; gap: 4px; }
+.view-btn.active { background-color: lightblue; }
+
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 1000; }
+
+.modal-card { background: white; border-radius: 12px; }
+.panel { position: fixed; top: 0; right: 0; width: 300px; max-width: 90vw; height: 100vh; background: white; border-left: 1px solid lightgray; z-index: 999; }
+
+.context-menu { position: fixed; width: 200px; border-radius: 8px; z-index: 2000; }
+
+.header { padding: 8px 16px; }
+.main { border-radius: 16px; margin-left: 8px; }
+.sidebar { width: 220px; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; }

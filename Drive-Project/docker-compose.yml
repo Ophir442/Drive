@@ -1,0 +1,81 @@
+#version: latest
+
+services:
+  # Main application
+  # app:
+  #   build: .
+  #   image: drive-app
+  #   volumes:
+  #     - realStorage:/usr/src/file_storage # to persist files in the host machine
+  #   command: ./mainApp           # docker-compose up app will run the main app
+  #   stdin_open: true             # keep STDIN open for user input
+  #   tty: true                    # allocate a pseudo-TTY for interactive input (for output i think)
+
+  server:
+    build: .
+    image: drive-app
+    container_name: drive_server_container
+    ports:
+      - "8080:8080"
+    volumes:
+      - realStorage:/usr/src/file_storage
+    environment:
+      - THREAD_POOL_SIZE=10
+    # Run "./server 8080" (from CMake) in the root folder (from Dockerfile)
+    command: ["./server", "8080"]
+
+  client-cpp:
+    build: .
+    image: drive-app
+    container_name: drive_client_cpp_container
+    depends_on:
+      - server
+    # Run "./client server 8080", when server will translate to IP address of server container
+    command: ["./client_cpp", "server", "8080"]
+    
+    stdin_open: true 
+    tty: true
+    
+    volumes:
+       - realStorage:/usr/src/file_storage
+       
+  client-py:
+    build: .
+    image: drive-app
+    container_name: drive_client_py_container
+    depends_on:
+      - server
+    # Override the command to run Python instead of the C++ binary
+    command: ["python3", "src/Client.py", "server", "8080"]
+    
+    stdin_open: true 
+    tty: true
+    
+    volumes:
+       - realStorage:/usr/src/file_storage
+  
+  web-server:
+    build:
+      context: ./webServer
+      dockerfile: Dockerfile.server
+    image: drive-web-server
+    container_name: drive_web_server_container
+    depends_on:
+      - server
+    ports:
+      - "3000:3000"
+    # Run "node app.js" (from package.json)
+    command: ["node", "app.js"]
+
+  # Tests
+  tests:
+    build: .
+    image: drive-app
+    depends_on:
+      - server
+    # Run "./runTests" (from CMake)
+    command: ["./runTests"]
+
+volumes:
+  realStorage:
+      

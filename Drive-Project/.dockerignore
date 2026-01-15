@@ -1,0 +1,22 @@
+# Ignore dependencies (The biggest culprits)
+node_modules/
+*/node_modules/
+
+# Ignore git history
+.git
+.gitignore
+
+# Ignore build artifacts
+build
+dist
+*.o
+*.out
+*.exe
+
+# Ignore system files
+.DS_Store
+.vscode
+.idea
+
+# Ignore local environment secrets
+.env

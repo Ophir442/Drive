@@ -1,0 +1,19 @@
+{
+  "name": "webserver",
+  "version": "1.0.0",
+  "description": "Google Drive Web Server",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.5",
+    "custom-env": "^2.0.6",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.2"
+  }
+}
