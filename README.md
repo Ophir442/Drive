@@ -4,7 +4,7 @@ A full-stack cloud storage application implementing a Google Drive-like service 
 
 **Created by:** Ophir Finchelstein | 216639542
 
-🔗 **Repository:** [GitHub - AdvancedSystemProgramming](https://github.com/shemesh7/AdvancedSystemProgramming)
+🔗 **Repository:** [GitHub - AdvancedSystemProgramming](https://github.com/Ophir442/Drive)
 
 ---
 
@@ -156,8 +156,8 @@ CloudDrive is a three-tier microservices application that provides cloud file st
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/shemesh7/AdvancedSystemProgramming.git
-cd AdvancedSystemProgramming
+git clone [https://github.com/Ophir442/Drive.git]
+cd Drive-Peoject
 
 # 2. Build and run
 docker-compose up --build
