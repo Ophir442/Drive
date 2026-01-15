@@ -2,7 +2,7 @@
 
 A full-stack cloud storage application implementing a Google Drive-like service with file management, sharing capabilities, and user authentication. Built as part of the Advanced System Programming course.
 
-**Created by:** Ophir Finchelstein | 216639542
+**Created by:** Ophir Finchelstein | Yehonatan Shemesh | Yoav Haze
 
 🔗 **Repository:** [GitHub - AdvancedSystemProgramming](https://github.com/Ophir442/Drive)
 
